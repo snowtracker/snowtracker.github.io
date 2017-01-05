@@ -6,9 +6,59 @@
 
         <link rel="stylesheet" href="stylesheets/app.css">
         <link rel="shortcut icon" href="favicon.ico" />
-
     </head>
     <body>
-        <h1></h1>
+        <div id="header">
+            <div class="title">
+                <img src="snowflake.png" alt="SnowTracker logo.">
+                <h1>SnowTracker</h1>
+            </div>
+            <div class="links">
+                <div class="social">
+                    <img src="facebook.svg" alt="Share on Facebook." onclick="pursue('facebook')">
+                    <img src="twitter.svg" alt="Share on Twitter." onclick="pursue('twitter')">
+                    <img src="email.svg" alt="Share via email." onclick="pursue('email')">
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="overview" class="row">
+                <p></p>
+            </div>
+            <div id="status" class="row">
+                <div class="">
+
+                </div>
+            </div>
+            <div id="calendar "class="row">
+                <div class="">
+
+                </div>
+            </div>
+            <div id="counties" class="row">
+
+            </div>
+        </div>
+
+        <div id="alerts">
+            <img src="close.svg" alt="Close alert.">
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function pursue(intent) {
+                if (intent == "twitter") {
+                    var URL = "https://twitter.com/intent/tweet/?text=" + encodeURIComponent("Hoping for snow? Check out SnowTracker at snowtracker.github.io!");
+                    window.open(URL, '_blank');
+                } else if (intent == "facebook") {
+                    var URL = "http://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent("http://snowtracker.github.io");
+                    window.open(URL, '_blank');
+                } else if (intent == "email") {
+                    var URL = "mailto:?subject=Check%20out%20SnowTracker!&body=" + encodeURIComponent("Hoping for snow? Check out SnowTracker at snowtracker.github.io!");
+                    window.open(URL, '_blank');
+                }
+            }
+        </script>
     </body>
 </html>
